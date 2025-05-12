@@ -3,6 +3,8 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const { spawn } = require("child_process");
 
+const PORT = process.env.PORT || 8000;
+
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
@@ -89,4 +91,4 @@ app.post("/api/best-path", (req, res) => {
  
 });
 
-app.listen(5000, () => console.log("Server running on http://localhost:5000"));
+app.listen(PORT, () => console.log("Server running on http://localhost:${PORT}"));
